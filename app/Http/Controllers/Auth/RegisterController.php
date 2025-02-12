@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\RegisterUserRequest;
+use App\Jobs\WelcomeEmailNotificationJob;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -24,6 +25,8 @@ class RegisterController extends Controller
         $user = User::create($credentials);
 
         Auth::login($user);
+
+        WelcomeEmailNotificationJob::dispatch($user);
 
         return to_route('dashboard');
     }
