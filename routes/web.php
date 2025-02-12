@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Dashboard\DashboardController;
+use App\Http\Controllers\Dashboard\EmailController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -30,4 +31,13 @@ Route::prefix('dashboard')->name('dashboard.')->group(function(){
 
     // Dashboard
     Route::get('/',DashboardController::class)->name('index');
+
+    Route::prefix('email')->name('email.')->controller(EmailController::class)->group(function(){
+        Route::get('/','index')->name('index');
+        Route::get('/new','create')->name('new');
+        Route::post('/store','store')->name('store');
+        Route::get('/edit/{email}','edit')->name('edit');
+        Route::put('/edit/{email}','update')->name('update');
+        Route::delete('/delete/{email}','destroy')->name('delete');
+    });
 });

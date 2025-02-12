@@ -12,12 +12,11 @@
                 <span>خانه</span>
             </a>
 
-{{--            <section class="sidebar-part-title">بخش شماره ها</section>--}}
 
-{{--            <a href="{{ route('admin.phone.index') }}" class="sidebar-link">--}}
-{{--                <i class="fas fa-phone"></i>--}}
-{{--                <span>شماره ها</span>--}}
-{{--            </a>--}}
+            <a href="{{ route('dashboard.email.index') }}" class="sidebar-link">
+                <i class="fas fa-envelope"></i>
+                <span>ایمیل ها</span>
+            </a>
 
 
 
