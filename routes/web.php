@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
+use App\Http\Controllers\Dashboard\DashboardController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -25,4 +26,8 @@ Route::prefix('auth')->group(function(){
 });
 
 
-Route::view('/dashboard','welcome')->name('dashboard');
+Route::prefix('dashboard')->name('dashboard.')->group(function(){
+
+    // Dashboard
+    Route::get('/',DashboardController::class)->name('index');
+});
