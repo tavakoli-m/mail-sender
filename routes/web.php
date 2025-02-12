@@ -21,7 +21,7 @@ Route::prefix('auth')->group(function(){
     });
 
     // Logout
-    Route::get('/logout',LogoutController::class)->name('logout');
+    Route::get('/logout',LogoutController::class)->name('logout')->middleware('auth');
 });
 
 
