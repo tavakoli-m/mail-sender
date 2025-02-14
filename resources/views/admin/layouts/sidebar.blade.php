@@ -19,6 +19,12 @@
             </a>
 
 
+            <a href="{{ route('dashboard.notification.index') }}" class="sidebar-link">
+                <i class="fas fa-sms"></i>
+                <span>اطلاه رسانی ها</span>
+            </a>
+
+
 
 
 

@@ -15,6 +15,7 @@ class MailNotification extends Model
         'title',
         'user_id',
         'status',
+        'body',
         'published_at'
     ];
 
